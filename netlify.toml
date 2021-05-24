@@ -9,8 +9,18 @@ TERM = "xterm"
 [[plugins]]
 package = "netlify-plugin-cypress"
 
-  [plugins.inputs.postBuild]
+  [plugins.inputs.preBuild]
   enable = true
+  record = true
+  group = "development build"
+  tag = "development"
+  start = 'npm run dev'
+  wait-on = 'http://localhost:3000'
+  wait-on-timeout = '30'
+
+
+  [plugins.inputs.postBuild]
+  enable = false
   record = true
   group = "production build"
   tag = "production"
