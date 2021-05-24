@@ -10,20 +10,25 @@ TERM = "xterm"
 package = "netlify-plugin-cypress"
 
   [plugins.inputs.preBuild]
-  enable = true
+  enable = false
   record = true
-  group = "development build"
-  tag = "development"
   start = 'npm run dev'
   wait-on = 'http://localhost:3000'
   wait-on-timeout = '30'
-
+  group = "test"
+  tag = "development build"
 
   [plugins.inputs.postBuild]
   enable = false
   record = true
-  group = "production build"
-  tag = "production"
+  group = "staging"
+  tag = "production build"
+
+  [plugins.inputs]
+  enable = true
+  record = true
+  group = "live"
+  tag = "production build"
 
 [[plugins]]
 package = "@netlify/plugin-nextjs"
