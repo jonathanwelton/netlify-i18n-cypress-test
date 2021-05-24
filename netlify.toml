@@ -5,7 +5,6 @@ publish = "out"
 [build.environment]
 CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
 TERM = "xterm"
-CYPRESS_RECORD_KEY = "CYPRESS_RECORD_KEY"
 
 [[plugins]]
 package = "netlify-plugin-cypress"
