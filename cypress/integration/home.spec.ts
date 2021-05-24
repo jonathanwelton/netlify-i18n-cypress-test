@@ -4,7 +4,7 @@ describe("when visiting the Static Site Generated page", () => {
 	});
 
 	it("should diaply the correct locale", () => {
-		cy.get("h1").should("contain", "en-us");
+		cy.get("h1").should("contain", "en-gb");
 	});
 
 	it("should diaply the correct page type", () => {
@@ -18,7 +18,7 @@ describe("when visiting the Server Side Rendered page", () => {
 	});
 
 	it("should diaply the correct locale", () => {
-		cy.get("h1").should("contain", "en-us");
+		cy.get("h1").should("contain", "en-gb");
 	});
 
 	it("should diaply the correct page type", () => {
