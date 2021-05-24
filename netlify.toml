@@ -1,0 +1,19 @@
+[build]
+command = "npm build"
+publish = "out"
+
+[build.environment]
+CYPRESS_CACHE_FOLDER = "./node_modules/CypressBinary"
+TERM = "xterm"
+
+[[plugins]]
+package = "netlify-plugin-cypress"
+
+  [plugins.inputs.postBuild]
+  enable = true
+  record = true
+  group = "production build"
+  tag = "production"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
